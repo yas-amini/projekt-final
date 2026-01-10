@@ -42,3 +42,22 @@ app.get('/api/search', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
+
+// POST new product (for admin form)
+app.post('/api/products', (req, res) => {
+  const { name, description, image, brand, sku, price } = req.body;
+  
+  // Create slug from name (e.g., "Blue Shirt" → "blue-shirt")
+  const slug = name.toLowerCase().replace(/\s+/g, '-').replace(/[åä]/g, 'a').replace(/ö/g, 'o');
+  
+  try {
+    const result = db.prepare(`
+      INSERT INTO products (name, slug, description, image, brand, sku, price)
+      VALUES (?, ?, ?, ?, ?, ?, ?)
+    `).run(name, slug, description, image, brand, sku, price);
+    
+    res.status(201).json({ id: result.lastInsertRowid, message: 'Product created!' });
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+});
