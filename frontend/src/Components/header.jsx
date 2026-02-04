@@ -1,11 +1,13 @@
 // Header.jsx - The navigation header for Freaky Fashion
+import { Link } from 'react-router-dom';
+
 //Creates a React component
 function Header() {
     //What gets displayed on screen
   return (
     <header className="header">
       <div className="header-logo">
-        <a href="/">Freaky Fashion</a>
+        <Link to="/">Freaky Fashion</Link>
       </div>
       
       <div className="header-search">
@@ -17,10 +19,10 @@ function Header() {
       </div>
 
       <nav className="header-nav">
-        <a href="#">Nyheter</a>
-        <a href="#">Topplistan</a>
-        <a href="#">Rea</a>
-        <a href="#">Kampanjer</a>
+        <Link to="/nyheter">Nyheter</Link>
+        <Link to="/topplistan">Topplistan</Link>
+        <Link to="/rea">Rea</Link>
+        <Link to="/kampanjer">Kampanjer</Link>
       </nav>
     </header>
   );

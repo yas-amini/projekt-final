@@ -1,9 +1,10 @@
 // ProductCard.jsx - Displays a single product
-// {product} Receives product data from parent component
+import { Link } from 'react-router-dom';
 
+// {product} Receives product data from parent component
 function ProductCard({ product }) {
   return (
-    <div className="product-card">
+    <Link to={`/products/${product.slug}`} className="product-card">
       <div className="product-image">
         <img src={product.image} alt={product.name} />
         <button className="favorite-btn">♡</button>
@@ -14,7 +15,7 @@ function ProductCard({ product }) {
         <p className="product-brand">{product.brand}</p>
         <p className="product-price">{product.price} SEK</p>
       </div>
-    </div>
+    </Link>
   );
 }
 
