@@ -1,0 +1,21 @@
+/* Home.css - Styles for the Home page */
+
+.products-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Mobile-first: 1 column by default */
+  gap: 1.5rem;
+}
+
+/* Medium screens (tablets) */
+@media (min-width: 640px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 1024px) {
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  }
+}

@@ -1,26 +1,27 @@
 // Footer.jsx - The footer for Freaky Fashion
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
     <footer className="footer">
       <div className="footer-section">
         <h4>Shopping</h4>
-        <a href="#">Vinterjackor</a>
-        <a href="#">Pufferjackor</a>
-        <a href="#">Kappa</a>
-        <a href="#">Trenchcoats</a>
+        <Link to="/category/vinterjackor">Vinterjackor</Link>
+        <Link to="/category/pufferjackor">Pufferjackor</Link>
+        <Link to="/category/kappa">Kappa</Link>
+        <Link to="/category/trenchcoats">Trenchcoats</Link>
       </div>
 
       <div className="footer-section">
         <h4>Mina Sidor</h4>
-        <a href="#">Mina Ordrar</a>
-        <a href="#">Mitt Konto</a>
+        <Link to="/my-orders">Mina Ordrar</Link>
+        <Link to="/my-account">Mitt Konto</Link>
       </div>
 
       <div className="footer-section">
         <h4>Kundtjänst</h4>
-        <a href="#">Returpolicy</a>
-        <a href="#">Integritetspolicy</a>
+        <Link to="/return-policy">Returpolicy</Link>
+        <Link to="/privacy-policy">Integritetspolicy</Link>
       </div>
 
       <div className="footer-bottom">

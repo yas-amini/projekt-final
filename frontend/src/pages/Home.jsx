@@ -1,7 +1,8 @@
 // Home.jsx - The home page showing popular products
 
 import { useState, useEffect } from 'react';
-import ProductCard from '../Components/productcard';
+import ProductCard from '../components/ProductCard';
+import './Home.css';
 
 function Home() {
   const [products, setProducts] = useState([]);
@@ -18,7 +19,7 @@ function Home() {
     <main className="home">
       <section className="hero">
         <h1>Freaky Fashion</h1>
-        <p>Upptäck vår senaste kollektion av trendiga kläder och accessoarer.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </section>
 
       <section className="products-section">

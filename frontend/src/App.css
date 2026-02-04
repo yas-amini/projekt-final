@@ -40,3 +40,35 @@
 .read-the-docs {
   color: #888;
 }
+
+/* --- App Layout Styles --- */
+
+.content-area {
+  display: flex;
+  flex-direction: column; /* Mobile-first: stack sidebar and main content */
+  gap: 2rem;
+}
+
+.sidebar {
+  /* No special width needed for mobile, it will be 100% by default */
+  text-align: left;
+}
+
+main {
+  text-align: left;
+}
+
+/* Medium screens and up */
+@media (min-width: 640px) {
+  .content-area {
+    flex-direction: row; /* Two-column layout for tablets and desktops */
+  }
+
+  .sidebar {
+    flex: 0 0 200px; /* Give sidebar a fixed width */
+  }
+
+  main {
+    flex: 1; /* Main content takes up the rest of the space */
+  }
+}
