@@ -1,8 +1,9 @@
-   1 *,
-   2 *::before,
-   3 *::after {
-   4   box-sizing: border-box;
-   5 }
+/* Box-sizing reset to ensure consistent padding/border behavior */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 #root {
   max-width: 1280px;
