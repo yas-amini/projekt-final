@@ -1,5 +1,6 @@
 // ProductCard.jsx - Displays a single product
 import { Link } from 'react-router-dom';
+import './ProductCard.css';
 
 // {product} Receives product data from parent component
 function ProductCard({ product }) {

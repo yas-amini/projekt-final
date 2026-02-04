@@ -1,0 +1,7 @@
+/* ProductCard.css - Styles for the ProductCard component */
+
+.product-image img {
+  width: 100%;      /* Ensures the image is never wider than its container */
+  height: auto;     /* Maintains the image's aspect ratio */
+  display: block;   /* Removes any extra space that can appear below an image */
+}

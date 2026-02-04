@@ -2,14 +2,14 @@
 
 .products-grid {
   display: grid;
-  grid-template-columns: 1fr; /* Mobile-first: 1 column by default */
+  grid-template-columns: repeat(2, 1fr); /* Mobile-first: 2 columns by default */
   gap: 1.5rem;
 }
 
 /* Medium screens (tablets) */
 @media (min-width: 640px) {
   .products-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
   }
 }
 

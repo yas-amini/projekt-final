@@ -18,8 +18,8 @@ function Home() {
   return (
     <main className="home">
       <section className="hero">
-        <h1>Freaky Fashion</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <h1>Lorem ipsum dolor</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
       </section>
 
       <section className="products-section">
