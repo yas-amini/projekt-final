@@ -1,0 +1,97 @@
+/* ==========================================================================
+   Header.css - Mobile-first responsive styles for the main header
+   ========================================================================== */
+
+/* --- Mobile-First Default (< 640px) --- */
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 columns for the first row */
+  grid-template-areas:
+    "logo   icons"
+    "search search";
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.header-logo {
+  grid-area: logo;
+  font-weight: bold;
+}
+.header-logo a {
+  text-decoration: none;
+  color: black;
+}
+
+.header-search {
+  grid-area: search;
+}
+.header-search input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.header-nav {
+  display: none; /* Hidden on mobile */
+}
+
+.header-icons {
+  grid-area: icons;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+.header-icons span {
+  font-size: 1.5rem;
+}
+
+
+/* --- Tablet Styles (>= 640px) --- */
+
+@media (min-width: 640px) {
+  .header {
+    grid-template-columns: auto 1fr auto; /* Logo, flexible Search, Icons */
+    grid-template-areas:
+      "logo   search  icons"
+      "nav    nav     nav"; /* Nav takes full width on the second row */
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .header-search {
+    grid-area: search;
+  }
+
+  .header-nav {
+    grid-area: nav;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+    margin-top: 1rem;
+  }
+}
+
+
+/* --- Desktop Styles (>= 1024px) --- */
+
+@media (min-width: 1024px) {
+  .header {
+    grid-template-columns: auto 1fr auto auto; /* Logo, flexible Search, Nav, Icons */
+    grid-template-areas: "logo search nav icons"; /* All on one row */
+    border-top: none; /* Remove borders from tablet layout */
+    margin-top: 0;
+  }
+
+  .header-nav {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+    justify-content: flex-end; /* Align nav to the right */
+  }
+}

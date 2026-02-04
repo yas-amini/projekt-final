@@ -1,21 +1,19 @@
 // Header.jsx - The navigation header for Freaky Fashion
 import { Link } from 'react-router-dom';
+import './Header.css';
 
-//Creates a React component
 function Header() {
-    //What gets displayed on screen
   return (
     <header className="header">
       <div className="header-logo">
         <Link to="/">Freaky Fashion</Link>
       </div>
-      
+
       <div className="header-search">
         <input 
           type="text" 
-          placeholder="Sök produkter..." 
+          placeholder="Sök produkt" 
         />
-        <button type="submit">Sök</button>
       </div>
 
       <nav className="header-nav">
@@ -24,8 +22,13 @@ function Header() {
         <Link to="/rea">Rea</Link>
         <Link to="/kampanjer">Kampanjer</Link>
       </nav>
+
+      <div className="header-icons">
+        <span>♡</span> {/* Heart Icon */}
+        <span>⚙️</span> {/* Settings/Menu Icon */}
+      </div>
     </header>
   );
 }
-//Makes this component usable in other files
+
 export default Header;
