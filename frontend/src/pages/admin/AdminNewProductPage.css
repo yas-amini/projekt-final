@@ -109,7 +109,7 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 639px) {
   .admin-main-content {
     margin: 1rem;
     padding: 1rem;
