@@ -17,7 +17,7 @@ function ProductDetailPage() {
       try {
         setLoading(true);
         // Fetch main product details
-        const productResponse = await fetch(`http://localhost:3000/api/products/${slug}`);
+        const productResponse = await fetch(`http://localhost:4000/api/products/${slug}`);
         if (!productResponse.ok) {
           throw new Error(`HTTP error! status: ${productResponse.status}`);
         }
@@ -25,7 +25,7 @@ function ProductDetailPage() {
         setProduct(productData);
 
         // Fetch all products to get similar ones
-        const allProductsResponse = await fetch('http://localhost:3000/api/products');
+        const allProductsResponse = await fetch('http://localhost:4000/api/products');
         if (!allProductsResponse.ok) {
           throw new Error(`HTTP error! status: ${allProductsResponse.status}`);
         }

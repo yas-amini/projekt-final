@@ -16,7 +16,7 @@ function SearchResultsPage() {
 
     if (query) {
       setLoading(true);
-      fetch(`http://localhost:3000/api/search?q=${encodeURIComponent(query)}`)
+      fetch(`http://localhost:4000/api/search?q=${encodeURIComponent(query)}`)
         .then(response => {
           if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);

@@ -9,7 +9,7 @@ function Home() {
 
   useEffect(() => {
     // Fetch products from our backend API
-    fetch('http://localhost:3000/api/products')
+    fetch('http://localhost:4000/api/products')
       .then(response => response.json())
       .then(data => setProducts(data))
       .catch(error => console.error('Error:', error));

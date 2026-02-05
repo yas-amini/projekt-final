@@ -37,7 +37,7 @@ function AdminNewProductPage() {
     setError(null);
 
     try {
-      const response = await fetch('http://localhost:3000/api/products', {
+      const response = await fetch('http://localhost:4000/api/products', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
