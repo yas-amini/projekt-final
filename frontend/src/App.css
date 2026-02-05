@@ -59,32 +59,15 @@
 /* --- App Layout Styles --- */
 
 .content-area {
-  display: flex;
-  flex-direction: column; /* Mobile-first: stack sidebar and main content */
-  gap: 2rem;
-}
-
-.sidebar {
-  display: none; /* Hidden on mobile by default */
-  text-align: left;
+  /* No sidebar, so content takes full width */
+  max-width: 1200px; /* Constrain overall app content width */
+  margin: 0 auto; /* Center the content area */
+  padding: 1rem; /* Add some padding around the content */
 }
 
 main {
   text-align: left;
+  width: 100%; /* Main content should always take full width within content-area */
 }
 
-/* Medium screens and up */
-@media (min-width: 640px) {
-  .content-area {
-    flex-direction: row; /* Two-column layout for tablets and desktops */
-  }
-
-  .sidebar {
-    display: block; /* Visible on larger screens */
-    flex: 0 0 200px; /* Give sidebar a fixed width */
-  }
-
-  main {
-    flex: 1; /* Main content takes up the rest of the space */
-  }
-}
+/* No specific media queries needed for content-area or main as they are now full-width */
