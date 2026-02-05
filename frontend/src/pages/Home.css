@@ -40,13 +40,7 @@
   margin-bottom: 2rem;
 }
 
-/* Products Grid Styling */
-.products-grid {
-  display: grid;
-  gap: 1.5rem;
-  /* Mobile: 2 columns */
-  grid-template-columns: repeat(2, 1fr);
-}
+/* Products Grid Styling (overrides for tablet and desktop) */
 
 /* Tablet: Show hero and use 3 columns */
 @media (min-width: 640px) {
