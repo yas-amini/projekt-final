@@ -1,0 +1,124 @@
+/* AdminProductListPage.css */
+
+.admin-product-list-page {
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.admin-header h1 {
+  font-size: 2em;
+  color: #333;
+}
+
+.new-product-button {
+  background-color: #28a745;
+  color: white;
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.new-product-button:hover {
+  background-color: #218838;
+}
+
+.admin-content h2 {
+  font-size: 1.5em;
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.products-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.products-table th,
+.products-table td {
+  border: 1px solid #ddd;
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.products-table th {
+  background-color: #f8f8f8;
+  font-weight: bold;
+  color: #333;
+}
+
+.products-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.products-table tbody tr:hover {
+  background-color: #e9e9e9;
+}
+
+.table-note {
+  font-size: 0.9em;
+  color: #777;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .admin-header h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  .products-table, .products-table tbody, .products-table tr, .products-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .products-table thead {
+    display: none; /* Hide table headers on small screens */
+  }
+
+  .products-table tr {
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+  }
+
+  .products-table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .products-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    width: calc(50% - 30px);
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  /* Assign data-label to each td in JSX */
+  .products-table td:nth-of-type(1)::before { content: "Namn"; }
+  .products-table td:nth-of-type(2)::before { content: "SKU"; }
+  .products-table td:nth-of-type(3)::before { content: "Pris"; }
+}
