@@ -70,41 +70,48 @@ function AdminNewProductPage() {
         <h1>Administration</h1>
       </header>
       
-      <main className="admin-content">
-        <h2>Ny produkt</h2>
-        <form onSubmit={handleSubmit} className="new-product-form">
-          <div className="form-group">
-            <label htmlFor="name">Namn</label>
-            <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} />
-          </div>
-          <div className="form-group">
-            <label htmlFor="description">Beskrivning</label>
-            <textarea id="description" name="description" value={formData.description} onChange={handleChange} />
-          </div>
-          <div className="form-group">
-            <label htmlFor="sku">SKU</label>
-            <input type="text" id="sku" name="sku" value={formData.sku} onChange={handleChange} />
-          </div>
-          <div className="form-group">
-            <label htmlFor="brand">Märke</label>
-            <input type="text" id="brand" name="brand" value={formData.brand} onChange={handleChange} />
-          </div>
-          <div className="form-group">
-            <label htmlFor="price">Pris</label>
-            <input type="number" id="price" name="price" value={formData.price} onChange={handleChange} />
-          </div>
-          <div className="form-group">
-            <label htmlFor="image">Bild (URL)</label>
-            <input type="text" id="image" name="image" value={formData.image} onChange={handleChange} />
-          </div>
-          
-          {error && <p className="form-error">{error}</p>}
-          
-          <button type="submit" disabled={submitting} className="submit-button">
-            {submitting ? 'Lägger till...' : 'Lägg till'}
-          </button>
-        </form>
-      </main>
+      <div className="admin-main-section">
+        <aside className="admin-sidebar">
+          <h3>Produkter</h3>
+        </aside>
+
+        <main className="admin-main-content">
+          <h2>Ny produkt</h2>
+          <form onSubmit={handleSubmit} className="new-product-form">
+            {/* Reordered Fields */}
+            <div className="form-group">
+              <label htmlFor="name">Namn</label>
+              <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} />
+            </div>
+            <div className="form-group">
+              <label htmlFor="description">Beskrivning</label>
+              <textarea id="description" name="description" value={formData.description} onChange={handleChange} />
+            </div>
+            <div className="form-group">
+              <label htmlFor="image">Bild (URL)</label>
+              <input type="text" id="image" name="image" value={formData.image} onChange={handleChange} placeholder="https://..." />
+            </div>
+            <div className="form-group">
+              <label htmlFor="brand">Märke</label>
+              <input type="text" id="brand" name="brand" value={formData.brand} onChange={handleChange} />
+            </div>
+            <div className="form-group">
+              <label htmlFor="sku">SKU</label>
+              <input type="text" id="sku" name="sku" value={formData.sku} onChange={handleChange} />
+            </div>
+            <div className="form-group">
+              <label htmlFor="price">Pris</label>
+              <input type="number" id="price" name="price" value={formData.price} onChange={handleChange} />
+            </div>
+            
+            {error && <p className="form-error">{error}</p>}
+            
+            <button type="submit" disabled={submitting} className="submit-button">
+              {submitting ? 'Lägger till...' : 'Lägg till'}
+            </button>
+          </form>
+        </main>
+      </div>
     </div>
   );
 }
