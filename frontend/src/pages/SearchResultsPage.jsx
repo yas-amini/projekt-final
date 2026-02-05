@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
-import './Home.css'; // Reusing Home.css for general product grid styling
+import './Home.css'; // Reusing Home.css for the grid
+import './SearchResultsPage.css'; // Specific styles for this page
 
 function SearchResultsPage() {
   const [products, setProducts] = useState([]);
@@ -41,11 +42,12 @@ function SearchResultsPage() {
   return (
     <main className="search-results-page">
       <section className="search-info">
-        <h1>Sök produkt: "{searchTerm}"</h1>
+        {/* The "Sök produkt" heading can be removed if the main header search is sufficient */}
+        <h1>Sökresultat för: "{searchTerm}"</h1>
         {loading ? (
-          <p>Laddar resultat...</p>
+          <p className="results-count">Laddar...</p>
         ) : (
-          <p>Hittade {products.length} produkter</p>
+          <p className="results-count">Hittade {products.length} produkter</p>
         )}
       </section>
 
