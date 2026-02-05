@@ -2,171 +2,116 @@
 
 /* General Page Layout */
 .admin-product-list-page {
-  background-color: #f5f5f5; /* Light gray background for the entire page */
-  min-height: 100vh; /* Ensure it takes full viewport height */
-  display: flex;
-  flex-direction: column;
+  background-color: #f5f5f5; /* Light gray background */
+  min-height: 100vh;
 }
 
-/* Header Section */
+/* Header Section (from previous styling, but simplified) */
 .admin-header {
-  background-color: #f5f5f5; /* Light gray */
+  background-color: #f5f5f5;
   width: 100%;
   padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid #ddd; /* Subtle separation from content */
+  border-bottom: 1px solid #ddd;
 }
 
 .admin-header h1 {
-  font-size: 2.2em; /* Large */
+  font-size: 2em;
   font-weight: bold;
-  color: #333; /* Black text */
+  color: #333;
   margin: 0;
+  text-align: center; /* Center the 'Administration' title */
 }
 
-/* Main Content Area with Sidebar */
-.admin-main-section {
-  display: flex;
-  flex: 1; /* Allows it to take remaining vertical space */
-  max-width: 1200px; /* Constrain content width */
-  margin: 1rem auto; /* Center content, add vertical margin */
-  background-color: #fff; /* Main content area background white */
-  border-radius: 8px; /* Slightly rounded corners for the content block */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Subtle shadow */
-  overflow: hidden; /* Contains children, especially rounded corners */
-}
-
-.admin-sidebar {
-  flex: 0 0 200px; /* Fixed width for sidebar */
-  background-color: #e9e9e9; /* Lighter gray for sidebar */
-  padding: 1.5rem 1rem;
-  border-right: 1px solid #eee; /* Separator from main content */
-}
-
-.admin-sidebar h3 {
-  font-weight: bold;
-  color: #333; /* Black text */
-  font-size: 1.2em;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid #ccc;
-}
-
+/* Main Content Area */
 .admin-main-content {
-  flex: 1; /* Takes remaining space */
-  padding: 2rem;
-  background-color: #fff; /* White background for the content */
+  max-width: 1000px; /* Constrain content width */
+  margin: 2rem auto; /* Center content, add vertical margin */
+  padding: 1rem;
+}
+
+.admin-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
 }
 
 .admin-main-content h2 {
-  font-size: 1.8em; /* Large, bold text for "Produkter" heading */
+  font-size: 1.8em;
   font-weight: bold;
   color: #333;
-  margin-top: 0;
-  margin-bottom: 1.5rem;
+  margin: 0;
 }
 
 /* Products Table Styling */
 .products-table {
   width: 100%;
-  border-collapse: collapse; /* Ensure borders are single lines */
-  margin-bottom: 1.5rem;
-  background-color: #fff; /* Light gray background, matches main content */
+  border-collapse: collapse;
+  background-color: #f5f5f5; /* Light gray table background */
   border: 1px solid #333; /* Dark gray/black border for table */
+  margin-bottom: 1.5rem;
 }
 
 .products-table th,
 .products-table td {
   border: 1px solid #333; /* Dark gray/black borders for cells */
-  padding: 12px 15px; /* Vertical padding for comfortable reading */
+  padding: 12px 15px; /* Comfortable padding */
   text-align: left;
   color: #333; /* Black text */
 }
 
 .products-table th {
-  background-color: #d0d0d0; /* Medium gray for header row */
+  background-color: #d0d0d0; /* Slightly darker gray for header */
   font-weight: bold;
-  color: #333; /* Black text */
-  padding-top: 15px;
-  padding-bottom: 15px;
 }
 
 /* Column Widths */
-.products-table th:nth-child(1), /* Namn */
-.products-table td:nth-child(1) {
-  width: 50%; /* Takes more width */
-}
-
-.products-table th:nth-child(2), /* SKU */
-.products-table td:nth-child(2) {
-  width: 25%; /* Narrower */
-}
-
-.products-table th:nth-child(3), /* Pris */
-.products-table td:nth-child(3) {
-  width: 25%; /* Narrower */
-}
-
-.products-table tbody tr {
-  background-color: #f9f9f9; /* Alternating or consistent light background */
-}
+.products-table th:nth-child(1) { width: 50%; }
+.products-table th:nth-child(2) { width: 25%; }
+.products-table th:nth-child(3) { width: 25%; }
 
 .products-table tbody tr:hover {
-  background-color: #e0e0e0; /* Slightly darker background on hover */
-  cursor: pointer;
+  background-color: #e0e0e0; /* Slightly darker on hover */
 }
 
 .table-note {
   font-size: 0.9em;
   color: #555;
   text-align: center;
-  margin-top: 1rem;
 }
 
 /* "Ny produkt" Button Styling */
 .new-product-button {
   background-color: #f5f5f5; /* Light gray */
   color: #333; /* Black text */
-  padding: 0.8rem 1.5rem;
+  padding: 0.7rem 1.2rem;
   border: 1px solid #333; /* Dark gray/black border */
-  border-radius: 4px; /* Slightly rounded corners */
+  border-radius: 4px;
   text-decoration: none;
   font-size: 1em;
   font-weight: bold;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .new-product-button:hover {
-  background-color: #e0e0e0; /* Slightly darker background on hover */
-  border-color: #000;
+  background-color: #e0e0e0; /* Darken on hover */
 }
 
-/* Responsive adjustments for smaller screens */
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .admin-header {
+  .admin-main-content {
+    margin: 1rem;
+  }
+  .admin-controls {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.5rem;
-    padding: 1rem;
+    gap: 1.5rem;
   }
-
-  .admin-main-section {
-    flex-direction: column; /* Stack sidebar and main content */
-    margin: 0.5rem;
-  }
-
-  .admin-sidebar {
-    width: 100%; /* Full width sidebar on small screens */
-    border-right: none;
-    border-bottom: 1px solid #eee;
-    padding: 1rem;
-  }
-
-  .admin-main-content {
-    padding: 1rem;
+  
+  /* On mobile, table headers are hidden and content is displayed as blocks */
+  .products-table thead {
+    display: none;
   }
 
   .products-table, .products-table tbody, .products-table tr, .products-table td {
@@ -174,49 +119,31 @@
     width: 100%;
   }
 
-  .products-table thead {
-    display: none; /* Hide table headers on small screens */
-  }
-
   .products-table tr {
-    margin-bottom: 0.8rem;
-    border: 1px solid #ddd;
-    display: flex;
-    flex-wrap: wrap; /* Allow cells to wrap */
+    margin-bottom: 1rem;
+    border: 1px solid #333;
   }
 
   .products-table td {
-    text-align: left;
-    padding-left: 15px;
+    text-align: right; /* Value on the right */
+    padding-left: 50%;
     position: relative;
-    width: 100%; /* Each cell takes full width of the row */
-    box-sizing: border-box; /* Include padding and border in width */
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+  .products-table td:last-child {
+    border-bottom: none;
   }
 
   .products-table td::before {
     content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    width: calc(50% - 20px);
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
     font-weight: bold;
-    display: inline-block;
-    width: 80px; /* Adjust as needed */
-    margin-right: 10px;
-  }
-
-  /* Assign data-label to each td in JSX for proper display on small screens */
-  .products-table td:nth-of-type(1)::before { content: "Namn:"; }
-  .products-table td:nth-of-type(2)::before { content: "SKU:"; }
-  .products-table td:nth-of-type(3)::before { content: "Pris:"; }
-
-  /* Ensure table cells are properly displayed on small screens for AdminProductListPage */
-  .products-table tr td {
-    border-bottom: none; /* Remove individual cell borders if preferred */
-    border-top: none;
-    padding-top: 8px;
-    padding-bottom: 8px;
-  }
-  .products-table tr:first-child td {
-    border-top: 1px solid #ddd;
-  }
-  .products-table tr:last-child td {
-    border-bottom: 1px solid #ddd;
+    color: #333;
   }
 }

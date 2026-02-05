@@ -25,7 +25,7 @@ function Home() {
       <section className="products-section">
         <h2>Populära Produkter</h2>
         <div className="products-grid">
-          {products.map(product => (
+          {products.slice(0, 8).map(product => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>

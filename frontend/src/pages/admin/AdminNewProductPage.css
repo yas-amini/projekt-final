@@ -1,61 +1,31 @@
 /* AdminNewProductPage.css */
 
-/* General Page Layout - Consistent with product list */
+/* General Page Layout */
 .admin-new-product-page {
-  background-color: #f5f5f5; /* Light gray page background */
+  background-color: #f5f5f5; /* Light gray background */
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
-/* Header Section */
+/* Admin Header */
 .admin-header {
-  background-color: #333; /* Dark gray or black */
+  background-color: #f5f5f5;
   width: 100%;
   padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  border-bottom: 1px solid #ddd;
 }
 
 .admin-header h1 {
-  font-size: 2.2em;
-  font-weight: bold;
-  color: #fff; /* White text */
-  margin: 0;
-}
-
-/* Main Content Area with Sidebar */
-.admin-main-section {
-  display: flex;
-  flex: 1;
-  max-width: 1200px;
-  width: 100%;
-  margin: 1rem auto;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  overflow: hidden;
-}
-
-.admin-sidebar {
-  flex: 0 0 200px;
-  background-color: #e9e9e9; /* Light gray sidebar */
-  padding: 1.5rem 1rem;
-  border-right: 1px solid #ddd;
-}
-
-.admin-sidebar h3 {
+  font-size: 2em;
   font-weight: bold;
   color: #333;
-  font-size: 1.2em;
-  margin-bottom: 1.5rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid #ccc;
+  margin: 0;
+  text-align: center;
 }
 
+/* Main Content Area */
 .admin-main-content {
-  flex: 1;
+  max-width: 700px; /* Constrain form width */
+  margin: 2rem auto;
   padding: 2rem;
   background-color: #f5f5f5; /* Light gray background */
 }
@@ -64,18 +34,15 @@
   font-size: 1.8em;
   font-weight: bold;
   color: #333;
-  margin-top: 0;
-  margin-bottom: 1.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 /* Form Styling */
 .new-product-form {
-  background-color: #f5f5f5; /* Light gray background */
-  padding: 1rem;
-  max-width: 600px; /* Constrain form width */
   display: flex;
   flex-direction: column;
-  gap: 1.5rem; /* Vertical spacing between fields */
+  gap: 1.5rem; /* Vertical spacing */
 }
 
 .form-group {
@@ -85,23 +52,22 @@
 
 .form-group label {
   font-weight: bold;
-  color: #333; /* Dark/black text */
-  margin-bottom: 0.5rem; /* Spacing between label and input */
+  color: #333; /* Bold black text */
+  margin-bottom: 0.5rem;
 }
 
 .form-group input,
 .form-group textarea {
-  background-color: #e9e9e9; /* Slightly lighter gray */
-  border: 1px solid #333; /* Dark gray or black border */
-  padding: 10px; /* Comfortable padding */
+  background-color: #f5f5f5; /* Light gray background */
+  border: 1px solid #333; /* Dark border */
+  padding: 10px;
   border-radius: 4px;
   font-size: 1em;
-  color: #333; /* Black text */
+  color: #333;
 }
 
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-  color: #777; /* Gray placeholder text */
+.form-group input::placeholder {
+  color: #777;
 }
 
 .form-group textarea {
@@ -111,21 +77,21 @@
 
 /* "Lägg till" Button */
 .submit-button {
-  background-color: #f5f5f5; /* Light gray */
-  color: #333; /* Black text */
-  border: 1px solid #333; /* Dark gray or black border */
-  padding: 0.8rem 1.5rem;
+  background-color: #f5f5f5;
+  color: #333;
+  border: 1px solid #333;
+  padding: 0.9rem;
+  width: 100%; /* Full width */
   border-radius: 4px;
   font-size: 1.1em;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  align-self: flex-start; /* Left-aligned */
-  margin-top: 1rem; /* Margin above button */
+  margin-top: 1rem;
 }
 
 .submit-button:hover:not(:disabled) {
-  background-color: #e0e0e0; /* Slightly darker on hover */
+  background-color: #e0e0e0;
 }
 
 .submit-button:disabled {
@@ -144,29 +110,8 @@
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .admin-header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
-  }
-
-  .admin-main-section {
-    flex-direction: column;
-    margin: 0.5rem;
-  }
-
-  .admin-sidebar {
-    width: 100%;
-    border-right: none;
-    border-bottom: 1px solid #ddd;
-    padding: 1rem;
-  }
-
   .admin-main-content {
+    margin: 1rem;
     padding: 1rem;
-  }
-
-  .new-product-form {
-    max-width: 100%;
   }
 }

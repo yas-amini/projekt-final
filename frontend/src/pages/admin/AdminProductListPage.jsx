@@ -40,46 +40,40 @@ function AdminProductListPage() {
     <div className="admin-product-list-page">
       <header className="admin-header">
         <h1>Administration</h1>
-        <Link to="/admin/products/new" className="new-product-button">
-          Ny produkt
-        </Link>
       </header>
 
-      <div className="admin-main-section">
-        <aside className="admin-sidebar">
-          <h3>Produkter</h3>
-          {/* Add other admin navigation links here if needed */}
-        </aside>
-
-        <div className="admin-main-content">
+      <main className="admin-main-content">
+        <div className="admin-controls">
           <h2>Produkter</h2>
-          {products.length > 0 ? (
-            <table className="products-table">
-              <thead>
-                <tr>
-                  <th>Namn</th>
-                  <th>SKU</th>
-                  <th>Pris</th>
-                  {/* Add more headers if needed for actions like edit/delete */}
-                </tr>
-              </thead>
-              <tbody>
-                {products.map((product) => (
-                  <tr key={product.id}>
-                    <td>{product.name}</td>
-                    <td>{product.sku}</td>
-                    <td>{product.price} SEK</td>
-                    {/* Add more cells for actions */}
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          ) : (
-            <p>Inga produkter hittades.</p>
-          )}
-          <p className="table-note">Samtliga produkter i databasen visas i tabellen</p>
+          <Link to="/admin/products/new" className="new-product-button">
+            Ny produkt
+          </Link>
         </div>
-      </div>
+        
+        {products.length > 0 ? (
+          <table className="products-table">
+            <thead>
+              <tr>
+                <th>Namn</th>
+                <th>SKU</th>
+                <th>Pris</th>
+              </tr>
+            </thead>
+            <tbody>
+              {products.map((product) => (
+                <tr key={product.id}>
+                  <td>{product.name}</td>
+                  <td>{product.sku}</td>
+                  <td>{product.price} SEK</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <p>Inga produkter hittades.</p>
+        )}
+        <p className="table-note">Samtliga produkter i databasen visas i tabellen</p>
+      </main>
     </div>
   );
 }
