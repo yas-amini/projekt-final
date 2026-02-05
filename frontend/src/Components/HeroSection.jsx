@@ -17,7 +17,8 @@ function HeroSection() {
         }
         const data = await response.json();
         if (data.length > 0) {
-          setSelectedItem(data[0]); // Default to the first item
+          const randomIndex = Math.floor(Math.random() * data.length);
+          setSelectedItem(data[randomIndex]);
         } else {
           setError('No hero item found.');
         }
