@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import SearchResultsPage from "./pages/SearchResultsPage"; // Import SearchResultsPage
 import AdminProductListPage from "./pages/admin/AdminProductListPage"; // Import AdminProductListPage
+import AdminNewProductPage from "./pages/admin/AdminNewProductPage"; // Import AdminNewProductPage
 import "./App.css";
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
             <Route path="/search" element={<SearchResultsPage />} />{" "}
             {/* Add SearchResultsPage route */}
             <Route path="/admin/products" element={<AdminProductListPage />} />
-            <Route path="/admin/products/new" element={<div>Admin New Product Form (Placeholder)</div>} />
+            <Route path="/admin/products/new" element={<AdminNewProductPage />} />
           </Routes>
         </main>
       </div>
