@@ -21,6 +21,18 @@ app.get('/api/products', (req, res) => {
   res.json(products);
 });
 
+// GET all hero items
+app.get('/api/hero-items', (req, res) => {
+  try {
+    const heroItems = db.prepare('SELECT * FROM hero_items').all();
+    res.json(heroItems);
+  } catch (error) {
+    // This will likely happen if the 'hero_items' table doesn't exist
+    console.error("Could not fetch hero items. Ensure the 'hero_items' table exists in your database.", error.message);
+    res.status(500).json({ error: "Could not fetch hero items. The 'hero_items' table might be missing." });
+  }
+});
+
 // GET single product by slug
 app.get('/api/products/:slug', (req, res) => {
   const product = db.prepare('SELECT * FROM products WHERE slug = ?').get(req.params.slug);
