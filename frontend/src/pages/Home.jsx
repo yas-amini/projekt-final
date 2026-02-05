@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import ProductCard from '../components/ProductCard';
+import HeroProductCard from '../components/HeroProductCard'; // Import the new component
 import './Home.css';
 
 function Home() {
@@ -9,6 +10,7 @@ function Home() {
 
   useEffect(() => {
     // Fetch products from our backend API
+    // We fetch all products and then slice for the grid. The hero fetches its own.
     fetch('http://localhost:4000/api/products')
       .then(response => response.json())
       .then(data => setProducts(data))
@@ -17,15 +19,13 @@ function Home() {
 
   return (
     <main className="home">
-      <section className="hero">
-        <h1>Lorem ipsum dolor</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      </section>
+      <HeroProductCard />
 
       <section className="products-section">
         <h2>Populära Produkter</h2>
         <div className="products-grid">
-          {products.slice(0, 8).map(product => (
+          {/* We can slice from the 2nd product to avoid showing the hero product in the grid */}
+          {products.slice(1, 9).map(product => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>

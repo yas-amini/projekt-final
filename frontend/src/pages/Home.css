@@ -6,27 +6,6 @@
   padding: 1rem;
 }
 
-/* Hero Section Styling */
-.hero {
-  display: none; /* Hidden on mobile by default */
-  text-align: center;
-  padding: 2rem 1rem;
-  margin-bottom: 2rem;
-}
-
-.hero h1 {
-  font-size: 2.5em;
-  color: #333;
-  margin-bottom: 0.5rem;
-}
-
-.hero p {
-  font-size: 1.1em;
-  color: #555;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
 /* Products Section */
 .products-section {
   width: 100%;
@@ -42,21 +21,15 @@
 
 /* Products Grid Styling (overrides for tablet and desktop) */
 
-/* Tablet: Show hero and use 3 columns */
+/* Tablet: 3 columns */
 @media (min-width: 640px) {
-  .hero {
-    display: block; /* Show hero on tablet */
-  }
   .products-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* Desktop: Use 4 columns */
+/* Desktop: 4 columns */
 @media (min-width: 1024px) {
-  .hero {
-    padding: 3rem 1rem;
-  }
   .products-grid {
     grid-template-columns: repeat(4, 1fr);
   }
