@@ -4,6 +4,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import BenefitsSection from "./components/BenefitsSection"; // Import BenefitsSection
 import ProductDetailPage from "./pages/ProductDetailPage";
 import SearchResultsPage from "./pages/SearchResultsPage"; // Import SearchResultsPage
 import AdminProductListPage from "./pages/admin/AdminProductListPage"; // Import AdminProductListPage
@@ -31,6 +32,7 @@ function App() {
           </Routes>
         </main>
       </div>
+      {!isAdminPage && <BenefitsSection />} {/* Conditionally render BenefitsSection */}
       {!isAdminPage && <Footer />}
     </div>
   );

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import ProductCard from "../components/ProductCard";
 import HeroSection from "../components/HeroSection"; // Import the new HeroSection
+import BenefitsSection from "../components/BenefitsSection"; // Import the new BenefitsSection
 import "./Home.css";
 
 function Home() {
@@ -44,6 +45,9 @@ function Home() {
           ))}
         </div>
       </section>
+
+      {/* Benefits Section */}
+      <BenefitsSection />
     </main>
   );
 }
