@@ -78,7 +78,7 @@ function ProductDetailPage() {
           </div>
           
           <p className="product-description">{product.description}</p>
-          <p className="product-price">{product.price} SEK</p>
+          <div className="product-price">{product.price} SEK</div>
           <button className="add-to-cart-button">Lägg i varukorg</button>
         </div>
       </section>

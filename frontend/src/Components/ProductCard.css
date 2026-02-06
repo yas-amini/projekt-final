@@ -8,13 +8,15 @@
   overflow: hidden;
   text-decoration: none;
   color: #333;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
   border-radius: 4px; /* Optional: subtle rounded corners */
 }
 
 .product-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .product-image {
@@ -48,7 +50,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .product-info {
@@ -95,14 +97,15 @@
   }
 
   .product-name {
-    flex-basis: 70%; /* Takes up left side */
+    flex-basis: 65%; /* Adjusted to ensure fit on one line with price */
     font-size: 1.1em; /* Maintain font size */
   }
 
   .product-price {
-    flex-basis: 25%; /* Takes up right side */
+    /* flex-basis: auto; */ /* Removed to fix vertical space issue */
     text-align: right; /* Align price to the right */
     font-size: 1.1em; /* Make price slightly larger for desktop */
+    margin-bottom: 0; /* Remove unwanted space */
   }
 
   .product-brand {

@@ -29,6 +29,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  gap: 0; /* Explicitly remove gap between children */
 }
 
 .product-info-panel h1 {
@@ -45,16 +46,16 @@
 }
 
 .product-price {
-  font-size: 1.8em;
+  font-size: 1.2em; /* Adjusted product price font size */
   font-weight: bold;
   color: #333;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0; /* Explicitly set to 0 to remove space */
   text-align: left; /* Explicitly align to the left */
 }
 
 .product-description {
   line-height: 1.6;
-  margin-bottom: 2rem;
+  margin-bottom: 2rem; /* Restored original margin */
 }
 
 /* "Lägg i varukorg" Button */
@@ -118,5 +119,8 @@
   }
   .product-image-container {
     flex-basis: 40%;
+  }
+  .product-description {
+    margin-bottom: 0.5rem; /* Reduce space on desktop */
   }
 }
