@@ -48,13 +48,7 @@
   color: #888;
 }
 
-/* --- Global Grid Styles --- */
-.products-grid {
-  display: grid;
-  gap: 1.5rem;
-  /* Mobile-first: 2 columns by default */
-  grid-template-columns: repeat(2, 1fr);
-}
+
 
 /* --- App Layout Styles --- */
 

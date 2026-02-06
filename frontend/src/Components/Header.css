@@ -6,10 +6,11 @@
 
 .header {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* 2 columns for the first row */
+  grid-template-columns: 1fr; /* Single column layout for mobile */
   grid-template-areas:
-    "logo   icons"
-    "search search";
+    "logo"
+    "search-icons"
+    "nav"; /* Nav now visible and in a column */
   align-items: center;
   padding: 1rem;
   gap: 1rem;
@@ -19,14 +20,24 @@
 .header-logo {
   grid-area: logo;
   font-weight: bold;
+  text-align: left; /* Logo to the left */
 }
 .header-logo a {
   text-decoration: none;
   color: black;
 }
 
+.header-search-and-icons {
+  grid-area: search-icons;
+  display: flex; /* Arrange children inline */
+  justify-content: space-between; /* Space out search and icons */
+  align-items: center;
+  width: 100%;
+}
+
 .header-search {
-  grid-area: search;
+  flex-grow: 1; /* Allow search bar to take available space */
+  margin-right: 1rem; /* Space between search and icons */
 }
 .header-search input {
   width: 100%;
@@ -36,13 +47,22 @@
 }
 
 .header-nav {
-  display: none; /* Hidden on mobile */
+  grid-area: nav;
+  display: flex; /* Display nav links */
+  flex-direction: column; /* Stack them vertically */
+  align-items: flex-start; /* Align to the left */
+  gap: 0.5rem; /* Space between nav links */
+  padding-top: 1rem; /* Padding above nav links */
+}
+.header-nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: normal;
 }
 
 .header-icons {
-  grid-area: icons;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-end; /* Align icons to the right within their container */
   gap: 1rem;
 }
 .header-icons span {
@@ -62,18 +82,35 @@
     gap: 1.5rem;
   }
 
+  /* Resetting mobile-specific styles for tablet */
+  .header-search-and-icons {
+    display: contents; /* Remove flex behavior, let grid manage children */
+  }
+
   .header-search {
-    grid-area: search;
+    grid-area: search; /* Assign to search area */
+    flex-grow: 0;
+    margin-right: 0;
   }
 
   .header-nav {
     grid-area: nav;
-    display: flex;
-    justify-content: center;
+    display: flex; /* Re-enable flex for horizontal layout */
+    flex-direction: row; /* Horizontal layout */
+    justify-content: flex-start;
     gap: 2rem;
     padding-top: 1rem;
     border-top: 1px solid #eee;
     margin-top: 1rem;
+    align-items: center; /* Center items vertically */
+  }
+  .header-nav a {
+    font-weight: bold; /* Make nav links bold on tablet/desktop */
+  }
+
+  .header-icons {
+    grid-area: icons; /* Assign to icons area */
+    justify-content: flex-end;
   }
 }
 
@@ -84,14 +121,31 @@
   .header {
     grid-template-columns: auto 1fr auto auto; /* Logo, flexible Search, Nav, Icons */
     grid-template-areas: "logo search nav icons"; /* All on one row */
-    border-top: none; /* Remove borders from tablet layout */
-    margin-top: 0;
+    border-bottom: 1px solid #eee; /* Ensure consistent border */
+    gap: 2rem; /* Increase gap for desktop */
+  }
+
+  .header-search-and-icons {
+    display: contents; /* Ensure children are managed by the main grid */
+  }
+
+  .header-search {
+    grid-area: search;
   }
 
   .header-nav {
-    border-top: none;
+    grid-area: nav;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; /* Align nav to the left */
+    gap: 2rem;
+    border-top: none; /* Remove border from tablet layout */
     margin-top: 0;
     padding-top: 0;
-    justify-content: flex-end; /* Align nav to the right */
+  }
+
+  .header-icons {
+    grid-area: icons;
+    justify-content: flex-end;
   }
 }
