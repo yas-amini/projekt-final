@@ -57,7 +57,7 @@
 .header-nav a {
   text-decoration: none;
   color: #333;
-  font-weight: normal;
+  font-weight: bold; /* Always bold */
 }
 
 .header-icons {
@@ -105,7 +105,7 @@
     align-items: center; /* Center items vertically */
   }
   .header-nav a {
-    font-weight: bold; /* Make nav links bold on tablet/desktop */
+
   }
 
   .header-icons {

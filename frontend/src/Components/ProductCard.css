@@ -36,7 +36,7 @@
 .favorite-btn {
   position: absolute;
   bottom: 8px; /* Position at the bottom */
-  left: 8px; /* Position at the left */
+  right: 8px; /* Position at the right */
   background: rgba(255, 255, 255, 0.7); /* Slightly translucent background */
   border: none;
   font-size: 1.2rem;

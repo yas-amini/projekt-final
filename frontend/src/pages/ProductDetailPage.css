@@ -49,6 +49,7 @@
   font-weight: bold;
   color: #333;
   margin-bottom: 1.5rem;
+  text-align: left; /* Explicitly align to the left */
 }
 
 .product-description {
