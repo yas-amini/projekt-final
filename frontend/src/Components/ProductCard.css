@@ -80,7 +80,7 @@
 
 .product-price {
   font-weight: bold;
-  font-size: 1em;
+  font-size: 1.1em; /* Ensures product price has the same font size as product name */
   margin: 0;
   color: #000; /* Black text */
 }

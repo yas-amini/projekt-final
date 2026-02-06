@@ -26,13 +26,7 @@ function Footer() {
           <Link to="/privacy-policy">Integritetspolicy</Link>
         </div>
 
-        <div className="footer-section">
-          <h4>Benefits</h4>
-          <p>✓ Gratis frakt och returer</p>
-          <p>✓ Expressfrakt</p>
-          <p>✓ Säkra betalningar</p>
-          <p>✓ Nyheter varje dag</p>
-        </div>
+
       </div>
       <div className="footer-bottom">
         <p>© Freaky Fashion | Educado AB</p>
