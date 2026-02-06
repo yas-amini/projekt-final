@@ -1,7 +1,7 @@
 // AdminProductListPage.jsx - Administration page for listing products
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import './AdminProductListPage.css'; // Import the CSS for this page
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import "./AdminProductListPage.css"; // Import the CSS for this page
 
 function AdminProductListPage() {
   const [products, setProducts] = useState([]);
@@ -11,7 +11,7 @@ function AdminProductListPage() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('http://localhost:4000/api/products');
+        const response = await fetch("http://localhost:4000/api/products");
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -49,7 +49,7 @@ function AdminProductListPage() {
             Ny produkt
           </Link>
         </div>
-        
+
         {products.length > 0 ? (
           <table className="products-table">
             <thead>
@@ -72,7 +72,6 @@ function AdminProductListPage() {
         ) : (
           <p>Inga produkter hittades.</p>
         )}
-        <p className="table-note">Samtliga produkter i databasen visas i tabellen</p>
       </main>
     </div>
   );

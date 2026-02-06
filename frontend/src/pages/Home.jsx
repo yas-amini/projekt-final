@@ -24,15 +24,24 @@ function Home() {
       {/* Promotional Content Section (Desktop only) */}
       <section className="promotional-content">
         <div className="promo-item">
-          <img src="https://via.placeholder.com/400x250/FFC0CB/FFFFFF?text=Promo+1" alt="Promotional Offer 1" />
+          <img
+            src="https://via.placeholder.com/400x250/FFC0CB/FFFFFF?text=Promo+1"
+            alt="Promotional Offer 1"
+          />
           <div className="promo-text">Sommarrea!</div>
         </div>
         <div className="promo-item">
-          <img src="https://via.placeholder.com/400x250/ADD8E6/FFFFFF?text=Promo+2" alt="Promotional Offer 2" />
+          <img
+            src="https://via.placeholder.com/400x250/ADD8E6/FFFFFF?text=Promo+2"
+            alt="Promotional Offer 2"
+          />
           <div className="promo-text">Nya Anlända</div>
         </div>
         <div className="promo-item">
-          <img src="https://via.placeholder.com/400x250/90EE90/FFFFFF?text=Promo+3" alt="Promotional Offer 3" />
+          <img
+            src="https://via.placeholder.com/400x250/90EE90/FFFFFF?text=Promo+3"
+            alt="Promotional Offer 3"
+          />
           <div className="promo-text">Fri Frakt</div>
         </div>
       </section>
@@ -46,8 +55,6 @@ function Home() {
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <BenefitsSection />
     </main>
   );
 }

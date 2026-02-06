@@ -15,11 +15,11 @@
 }
 
 .admin-header h1 {
-  font-size: 2em;
+  font-size: 1.5em;
   font-weight: bold;
   color: #333;
   margin: 0;
-  text-align: center;
+  text-align: left;
 }
 
 /* Main Content Area */
@@ -31,7 +31,7 @@
 }
 
 .admin-main-content h2 {
-  font-size: 1.8em;
+  font-size: 1.5em;
   font-weight: bold;
   color: #333;
   text-align: center;
