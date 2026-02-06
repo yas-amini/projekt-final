@@ -1,5 +1,10 @@
 // App.jsx - Main application component
-// Brings in the components
+// Brings in the components & defines the inside of the app
+
+// Imports routing tools from react-router-dom:
+// - Routes: container for all route definitions (maps URLs to components)
+// - Route: defines a single route (URL path → component to render)
+// - useLocation: hook to get current URL info, useful for reacting to navigation
 import { Routes, Route, useLocation } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -13,7 +18,7 @@ import "./App.css";
 
 function App() {
   const location = useLocation();
-  const isAdminPage = location.pathname.startsWith('/admin');
+  const isAdminPage = location.pathname.startsWith("/admin");
 
   return (
     <div className="app">
@@ -28,11 +33,15 @@ function App() {
             <Route path="/search" element={<SearchResultsPage />} />{" "}
             {/* Add SearchResultsPage route */}
             <Route path="/admin/products" element={<AdminProductListPage />} />
-            <Route path="/admin/products/new" element={<AdminNewProductPage />} />
+            <Route
+              path="/admin/products/new"
+              element={<AdminNewProductPage />}
+            />
           </Routes>
         </main>
       </div>
-      {!isAdminPage && <BenefitsSection />} {/* Conditionally render BenefitsSection */}
+      {!isAdminPage && <BenefitsSection />}{" "}
+      {/* Conditionally render BenefitsSection */}
       {!isAdminPage && <Footer />}
     </div>
   );
