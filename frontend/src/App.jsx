@@ -1,4 +1,4 @@
-// App.jsx - Main application component
+// App.jsx - Main application component. his is typically the root component of the entire React application. It defines the main layout, handles routing (using react-router-dom to switch between different "pages"), and might include components that appear on most pages (like Header, Footer, etc.).
 // Brings in the components & defines the inside of the app
 // the app adapts the layout based on the current URL to show a “regular user view” or an “admin view.”
 

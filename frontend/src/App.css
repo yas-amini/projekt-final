@@ -48,15 +48,12 @@
   color: #888;
 }
 
-
-
 /* --- App Layout Styles --- */
 
 .content-area {
-  /* No sidebar, so content takes full width */
-  max-width: 1200px; /* Constrain overall app content width */
+  max-width: 1200px;
   margin: 0 auto; /* Center the content area */
-  padding: 1rem; /* Add some padding around the content */
+  padding: 1rem;
 }
 
 main {

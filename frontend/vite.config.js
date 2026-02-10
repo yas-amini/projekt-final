@@ -1,3 +1,5 @@
+//  Configuration for the build tool that compiles and bundles the React code for the browser.
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
