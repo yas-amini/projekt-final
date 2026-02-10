@@ -1,10 +1,11 @@
-// db.js - Database setup for Freaky Fashion
-// This file creates the database, products table, and adds sample data
+// db.js - Sets up the database, creates the products table, and seeds sample product data
 
+// SQLite database library
 const Database = require("better-sqlite3");
+// Helps create safe file paths
 const path = require("path");
 
-// Create or open the database file
+// Create or open the SQLite database file
 const db = new Database(path.join(__dirname, "freaky_fashion.db"));
 
 // Create the products table if it doesn't exist
@@ -21,7 +22,7 @@ db.exec(`
   )
 `);
 
-// Sample products for Freaky Fashion
+// Sample products used to seed the database
 const products = [
   {
     name: "Svart T-Shirt",
@@ -105,11 +106,12 @@ const products = [
   },
 ];
 
-// Check if products already exist
+// Check how many products already exist in the database
 const existingCount = db
   .prepare("SELECT COUNT(*) as count FROM products")
   .get();
 
+// Only seed database if it is empty
 if (existingCount.count === 0) {
   // Insert products into database
   const insertProduct = db.prepare(`
@@ -117,16 +119,18 @@ if (existingCount.count === 0) {
     VALUES (@name, @slug, @description, @image, @brand, @sku, @price)
   `);
 
-  // Use a transaction for better performance
+  // Group all product inserts into one transaction so they are faster and all succeed or fail together
   const insertMany = db.transaction((products) => {
     for (const product of products) {
       insertProduct.run(product);
     }
   });
 
+  // Insert sample products
   insertMany(products);
   console.log("✅ Database seeded with " + products.length + " products!");
 } else {
+  // Skip seeding if products already exist
   console.log("ℹ️ Database already has " + existingCount.count + " products");
 }
 
