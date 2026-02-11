@@ -1,9 +1,10 @@
-// This file starts the react app & sets up the app globally
+// This file starts the react app & sets up the app globally, Its primary job is to tell React: "Render my <App /> component into the div in index.html."
 // 1. Imports tools & the app
 // 2. Finds the root div in HTML , document.getElementById('root')
 // 3. Opens a door between react and the browser , createRoot(...)
 // 4. Renders the app inside that div
 // 5. Applies safety checks (StrictMode) and routing (BrowseRouter)
+
 
 // Helps catch potential problems during development
 import { StrictMode } from "react";
