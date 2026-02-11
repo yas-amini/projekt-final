@@ -108,12 +108,3 @@ Once both the backend and frontend servers are running:
 2.  Navigate through the application to view products, search, etc.
 3.  Access administrative features by navigating to the appropriate routes (e.g., `/admin/products` if implemented).
 
-## Contributing
-
-(Optional section for future development)
-If you wish to contribute, please fork the repository and submit a pull request.
-
-## License
-
-(Optional section)
-This project is licensed under the MIT License - see the LICENSE.md file for details.
