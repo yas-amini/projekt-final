@@ -1,6 +1,8 @@
 /* Footer.css - Styles for the Footer component */
 
-/* --- Mobile-First Default (< 640px) --- */
+/* ------------------------ */
+/* Mobile-First Default (<640px) */
+/* ------------------------ */
 .footer {
   background-color: #f0f0f0; /* Light gray background */
   color: black;
@@ -11,12 +13,12 @@
 .footer-content-grid {
   display: grid;
   grid-template-columns: 1fr; /* Single column for mobile */
-  gap: 2rem; /* Spacing between sections */
+  gap: 2rem; /* Space between sections */
 }
 
 .footer-section h4 {
   margin-bottom: 1rem;
-  color: #333;
+  color: #333; /* Darker heading */
 }
 
 .footer-section a,
@@ -24,7 +26,7 @@
   display: block;
   color: black;
   text-decoration: none;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem; /* Space between links/text */
 }
 
 .footer-bottom {
@@ -36,25 +38,32 @@
   color: #555;
 }
 
-/* --- Tablet Styles (>= 640px) --- */
+/* ------------------------ */
+/* Tablet Layout (≥640px) */
+/* ------------------------ */
 @media (min-width: 640px) {
   .footer-content-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* 3-4 columns for tablet */
-    justify-items: start; /* Align items to the start of the grid area */
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(150px, 1fr)
+    ); /* Multi-column grid */
+    justify-items: start; /* Align items to the start of each column */
   }
 
   .footer-section h4 {
-    margin-bottom: 1rem;
+    margin-bottom: 1rem; /* Consistent spacing for headings */
   }
-  
+
   .footer-bottom {
-    grid-column: 1 / -1; /* Make copyright span all columns */
+    grid-column: 1 / -1; /* Make footer-bottom span all columns */
   }
 }
 
-/* --- Desktop Styles (>= 1024px) --- */
+/* ------------------------ */
+/* Desktop Layout (≥1024px) */
+/* ------------------------ */
 @media (min-width: 1024px) {
   .footer-content-grid {
-    grid-template-columns: repeat(4, 1fr); /* 4 columns for desktop */
+    grid-template-columns: repeat(4, 1fr); /* Fixed 4-column layout */
   }
 }

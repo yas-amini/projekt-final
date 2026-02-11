@@ -1,17 +1,18 @@
-/* ProductCard.css */
-
+/* ------------------------ */
+/* Mobile Layout (<640px)   */
+/* ------------------------ */
 .product-card {
   display: flex;
   flex-direction: column;
   background-color: #f8f8f8; /* Light gray background */
-  border: 1px solid #333; /* Dark gray or black border */
+  border: 1px solid #333; /* Dark gray border */
   overflow: hidden;
   text-decoration: none;
   color: #333;
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease;
-  border-radius: 4px; /* Optional: subtle rounded corners */
+  border-radius: 4px; /* Rounded corners */
 }
 
 .product-card:hover {
@@ -22,7 +23,7 @@
 .product-image {
   position: relative;
   width: 100%;
-  padding-bottom: 100%;
+  padding-bottom: 100%; /* Square aspect ratio */
 }
 
 .product-image img {
@@ -37,15 +38,15 @@
 
 .favorite-btn {
   position: absolute;
-  bottom: 8px; /* Position at the bottom */
-  right: 8px; /* Position at the right */
-  background: rgba(255, 255, 255, 0.7); /* Slightly translucent background */
+  bottom: 8px;
+  right: 8px;
+  background: rgba(255, 255, 255, 0.7);
   border: none;
   font-size: 1.2rem;
-  color: #333; /* Dark color for the heart */
+  color: #333;
   cursor: pointer;
   padding: 5px 8px;
-  border-radius: 50%; /* Make it circular */
+  border-radius: 50%;
   line-height: 1;
   display: flex;
   align-items: center;
@@ -58,22 +59,22 @@
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  text-align: left; /* Ensure left-aligned */
+  text-align: left;
 }
 
 .product-name {
   font-weight: bold;
   font-size: 1.1em;
   margin: 0;
-  color: #000; /* Black text */
-  white-space: nowrap; /* Prevent wrapping */
-  overflow: hidden; /* Hide overflow */
-  text-overflow: ellipsis; /* Add ellipsis for overflow */
+  color: #000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .product-brand {
   font-size: 0.9em;
-  color: #000; /* Black text */
+  color: #000;
   margin: 0;
   white-space: nowrap;
   overflow: hidden;
@@ -82,36 +83,37 @@
 
 .product-price {
   font-weight: bold;
-  font-size: 1.1em; /* Ensures product price has the same font size as product name */
+  font-size: 1.1em;
   margin: 0;
-  color: #000; /* Black text */
+  color: #000;
 }
 
-/* Desktop: Product name and price inline, brand below */
+/* ------------------------ */
+/* Desktop Layout (≥1024px) */
+/* ------------------------ */
 @media (min-width: 1024px) {
   .product-info {
-    flex-direction: row; /* Arrange items in a row initially */
+    flex-direction: row; /* Name and price in one row */
     flex-wrap: wrap; /* Allow wrapping */
-    justify-content: space-between; /* Space between name and price */
+    justify-content: space-between;
     align-items: baseline; /* Align text baselines */
   }
 
   .product-name {
-    flex-basis: 65%; /* Adjusted to ensure fit on one line with price */
-    font-size: 1.1em; /* Maintain font size */
+    flex-basis: 65%; /* Ensure name fits with price */
+    font-size: 1.1em;
   }
 
   .product-price {
-    /* flex-basis: auto; */ /* Removed to fix vertical space issue */
-    text-align: right; /* Align price to the right */
-    font-size: 1.1em; /* Make price slightly larger for desktop */
-    margin-bottom: 0; /* Remove unwanted space */
+    text-align: right; /* Price aligned right */
+    font-size: 1.1em;
+    margin-bottom: 0;
   }
 
   .product-brand {
-    flex-basis: 100%; /* Brand takes full width below name and price */
-    order: 3; /* Ensure it appears last */
-    font-size: 0.85em; /* Slightly smaller for brand on desktop */
-    margin-top: 0.25rem; /* Small space above brand */
+    flex-basis: 100%; /* Brand on full width below name/price */
+    order: 3; /* Appears last */
+    font-size: 0.85em; /* Smaller on desktop */
+    margin-top: 0.25rem; /* Small spacing above brand */
   }
 }

@@ -1,13 +1,18 @@
 /* Home.css */
 
+/* ------------------------ */
+/* General Page Layout      */
+/* ------------------------ */
 .home {
   max-width: 1200px;
-  min-width: 500px; /* Minimum width for the page */
+  min-width: 500px; /* Minimum page width */
   margin: 0 auto;
   padding: 1rem;
 }
 
-/* Products Section */
+/* ------------------------ */
+/* Products Section         */
+/* ------------------------ */
 .products-section {
   width: 100%;
 }
@@ -20,49 +25,59 @@
   margin-bottom: 2rem;
 }
 
-/* Products Grid Styling */
+/* ------------------------ */
+/* Products Grid - Mobile   */
+/* ------------------------ */
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(1, 1fr); /* Mobile: 1 column */
+  grid-template-columns: repeat(1, 1fr); /* 1 column for mobile */
   gap: 1rem;
 }
 
-/* Tablet: 2 columns */
+/* ------------------------ */
+/* Products Grid - Tablet (≥640px) */
+/* ------------------------ */
 @media (min-width: 640px) {
   .products-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
   }
 }
 
-/* Promotional Content Section */
+/* ------------------------ */
+/* Promotional Content - Mobile (hidden) */
+/* ------------------------ */
 .promotional-content {
-  display: none; /* Hidden by default (mobile-first) */
+  display: none;
 }
 
-/* Desktop: 4 columns */
+/* ------------------------ */
+/* Desktop Layout (≥1024px) */
+/* ------------------------ */
 @media (min-width: 1024px) {
+  /* Products Grid */
   .products-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on desktop */
   }
 
+  /* Promotional Content */
   .promotional-content {
-    display: grid; /* Display as grid on desktop */
+    display: grid; /* Show grid on desktop */
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-    margin-top: 3rem; /* Space above promotional content */
+    margin-top: 3rem; /* Space above */
     margin-bottom: 2rem;
   }
 
   .promotional-content .promo-item {
     position: relative;
     overflow: hidden;
-    border-radius: 8px; /* Optional: subtle rounded corners */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 
   .promotional-content .promo-item img {
     width: 100%;
-    height: 180px; /* Consistent height for promo images */
+    height: 180px; /* Consistent height */
     object-fit: cover;
     display: block;
   }
@@ -76,7 +91,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(0, 0, 0, 0.4); /* Dark overlay */
+    background-color: rgba(0, 0, 0, 0.4); /* Overlay */
     color: #fff;
     font-size: 1.5em;
     font-weight: bold;

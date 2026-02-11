@@ -1,53 +1,64 @@
+/* ------------------------ */
 /* Benefits Section Styling */
+/* ------------------------ */
+
+/* Container for all benefits */
 .benefits-section {
   display: flex;
   flex-direction: column; /* Mobile: stacked vertically */
   gap: 1.5rem; /* Space between benefit items */
-  padding: 2rem 0;
+  padding: 2rem 0; /* Top & bottom padding */
   border-top: 1px solid #eee;
   margin-top: 2rem;
 }
 
+/* Single benefit item (icon + text) */
 .benefit-item {
   display: flex;
   align-items: center; /* Align icon and text horizontally */
-  text-align: left; /* Text is left-aligned */
+  text-align: left; /* Text aligns left */
 }
 
+/* Icon inside benefit item */
 .benefit-item span {
-  font-size: 2rem; /* Size of the icon */
+  font-size: 2rem; /* Icon size */
   margin-right: 1rem; /* Space between icon and text */
 }
 
+/* Text inside benefit item */
 .benefit-item p {
   color: #000; /* Black text */
   margin: 0;
   font-size: 1em;
 }
 
-/* Tablet: 2 columns */
+/* ------------------------ */
+/* Tablet Layout (≥640px)  */
+/* ------------------------ */
 @media (min-width: 640px) {
   .benefits-section {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem; /* Adjust gap for tablet */
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 2rem; /* Adjust spacing */
   }
 }
 
-/* Desktop: 4 columns */
+/* ------------------------ */
+/* Desktop Layout (≥1024px) */
+/* ------------------------ */
 @media (min-width: 1024px) {
   .benefits-section {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2.5rem; /* Adjust gap for desktop */
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 2.5rem; /* Adjust spacing */
   }
 
   .benefit-item {
-    flex-direction: column; /* Stack icon and text vertically on desktop */
-    text-align: center; /* Center align text */
+    flex-direction: column; /* Stack icon above text */
+    text-align: center; /* Center text */
   }
 
   .benefit-item span {
-    margin-right: 0;
-    margin-bottom: 0.5rem; /* Space between icon and text */
+    margin-right: 0; /* Remove horizontal spacing */
+    margin-bottom: 0.5rem; /* Add vertical spacing */
   }
 }

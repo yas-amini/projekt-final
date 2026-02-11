@@ -1,11 +1,15 @@
-/* SearchResultsPage.css */
-
+/* ------------------------ */
+/* General Page Layout      */
+/* ------------------------ */
 .search-results-page {
   max-width: 1200px;
   margin: 0 auto;
   padding: 1rem;
 }
 
+/* ------------------------ */
+/* Search Info Section      */
+/* ------------------------ */
 .search-info {
   text-align: center;
   margin-bottom: 2rem;
@@ -23,4 +27,7 @@
   color: #333;
 }
 
-/* Re-using products-section and products-grid from Home.css, so no need to redefine them */
+/* ------------------------ */
+/* Products Grid            */
+/* ------------------------ */
+/* Re-use .products-section and .products-grid from Home.css */

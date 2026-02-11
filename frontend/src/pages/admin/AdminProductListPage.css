@@ -1,12 +1,16 @@
 /* AdminProductListPage.css */
 
-/* General Page Layout */
+/* ------------------------ */
+/* General Page Layout      */
+/* ------------------------ */
 .admin-product-list-page {
   background-color: #f5f5f5; /* Light gray background */
   min-height: 100vh;
 }
 
-/* Header Section (from previous styling, but simplified) */
+/* ------------------------ */
+/* Admin Header             */
+/* ------------------------ */
 .admin-header {
   background-color: #f5f5f5;
   width: 100%;
@@ -19,13 +23,15 @@
   font-weight: bold;
   color: #333;
   margin: 0;
-  text-align: center; /* Center the 'Administration' title */
+  text-align: center; /* Centered 'Administration' title */
 }
 
-/* Main Content Area */
+/* ------------------------ */
+/* Main Content Area        */
+/* ------------------------ */
 .admin-main-content {
   max-width: 1000px; /* Constrain content width */
-  margin: 2rem auto; /* Center content, add vertical margin */
+  margin: 2rem auto;
   padding: 1rem;
 }
 
@@ -43,35 +49,43 @@
   margin: 0;
 }
 
-/* Products Table Styling */
+/* ------------------------ */
+/* Products Table Styling   */
+/* ------------------------ */
 .products-table {
   width: 100%;
   border-collapse: collapse;
-  background-color: #f5f5f5; /* Light gray table background */
-  border: 1px solid #333; /* Dark gray/black border for table */
+  background-color: #f5f5f5;
+  border: 1px solid #333;
   margin-bottom: 1.5rem;
 }
 
 .products-table th,
 .products-table td {
-  border: 1px solid #333; /* Dark gray/black borders for cells */
-  padding: 12px 15px; /* Comfortable padding */
+  border: 1px solid #333;
+  padding: 12px 15px;
   text-align: left;
-  color: #333; /* Black text */
+  color: #333;
 }
 
 .products-table th {
-  background-color: #d0d0d0; /* Slightly darker gray for header */
+  background-color: #d0d0d0;
   font-weight: bold;
 }
 
 /* Column Widths */
-.products-table th:nth-child(1) { width: 50%; }
-.products-table th:nth-child(2) { width: 25%; }
-.products-table th:nth-child(3) { width: 25%; }
+.products-table th:nth-child(1) {
+  width: 50%;
+}
+.products-table th:nth-child(2) {
+  width: 25%;
+}
+.products-table th:nth-child(3) {
+  width: 25%;
+}
 
 .products-table tbody tr:hover {
-  background-color: #e0e0e0; /* Slightly darker on hover */
+  background-color: #e0e0e0;
 }
 
 .table-note {
@@ -80,12 +94,14 @@
   text-align: center;
 }
 
-/* "Ny produkt" Button Styling */
+/* ------------------------ */
+/* "Ny produkt" Button      */
+/* ------------------------ */
 .new-product-button {
-  background-color: #f5f5f5; /* Light gray */
-  color: #333; /* Black text */
+  background-color: #f5f5f5;
+  color: #333;
   padding: 0.7rem 1.2rem;
-  border: 1px solid #333; /* Dark gray/black border */
+  border: 1px solid #333;
   border-radius: 4px;
   text-decoration: none;
   font-size: 1em;
@@ -95,26 +111,32 @@
 }
 
 .new-product-button:hover {
-  background-color: #e0e0e0; /* Darken on hover */
+  background-color: #e0e0e0;
 }
 
-/* Responsive adjustments */
+/* ------------------------ */
+/* Mobile Layout (<640px)   */
+/* ------------------------ */
 @media (max-width: 639px) {
   .admin-main-content {
     margin: 1rem;
   }
+
   .admin-controls {
     flex-direction: column;
     align-items: flex-start;
     gap: 1.5rem;
   }
-  
-  /* On mobile, table headers are hidden and content is displayed as blocks */
+
+  /* Mobile-friendly table layout */
   .products-table thead {
     display: none;
   }
 
-  .products-table, .products-table tbody, .products-table tr, .products-table td {
+  .products-table,
+  .products-table tbody,
+  .products-table tr,
+  .products-table td {
     display: block;
     width: 100%;
   }
@@ -125,12 +147,13 @@
   }
 
   .products-table td {
-    text-align: right; /* Value on the right */
+    text-align: right;
     padding-left: 50%;
     position: relative;
     border: none;
     border-bottom: 1px solid #ddd;
   }
+
   .products-table td:last-child {
     border-bottom: none;
   }
