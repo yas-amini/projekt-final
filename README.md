@@ -13,6 +13,7 @@ This is a full-stack e-commerce web application called `Wearhaus`. It is designe
 - **Responsive Design:** (Implied by CSS files) User-friendly interface across various devices.
 
 ## Technologies Used
+<<<<<<< HEAD
 
 ### Frontend
 
